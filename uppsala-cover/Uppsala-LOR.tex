@@ -1,13 +1,13 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
-% Awesome CV LaTeX Template for CV/Resume
+% Awesome CV LaTeX Template for Cover Letter
 %
 % This template has been downloaded from:
 % https://github.com/posquit0/Awesome-CV
 %
-% Author:
+% Authors:
 % Claud D. Park <posquit0.bj@gmail.com>
-% http://www.posquit0.com
+% Lars Richter <mail@ayeks.de>
 %
 % Template license:
 % CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
@@ -29,6 +29,7 @@
 \definecolor{awesome-purple}{HTML}{b5179e}
 \colorlet{awesome}{awesome-purple}
 % Uncomment if you would like to specify your own color
+% \definecolor{awesome}{HTML}{CA63A8}
 
 % Colors for text
 % Uncomment if you would like to specify your own color
@@ -39,7 +40,7 @@
 % \definecolor{sectiondivider}{HTML}{5D5D5D}
 
 % Set false if you don't want to highlight section with awesome color
-% \setbool{acvSectionColorHighlight}{false}
+\setbool{acvSectionColorHighlight}{true}
 
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
@@ -50,7 +51,7 @@
 %	Comment any of the lines below if they are not required
 %-------------------------------------------------------------------------------
 % Available options: circle|rectangle,edge/noedge,left/right
-% \photo{./examples/profile.png}
+% \photo[circle,noedge,left]{./examples/profile}
 \name{Rishi}{Raj}
 \position{Gradudate Researcher{\enskip\cdotp\enskip}Theoretical Physics}
 \address{Department of Physics, IIT Madras, Chennai, India}
@@ -66,7 +67,7 @@
 % \twitter{@twit}
 % \skype{skype-id}
 % \reddit{reddit-id}
-% \medium{medium-id}
+% \medium{madium-id}
 % \kaggle{kaggle-id}
 % \googlescholar{googlescholar-id}{name-to-display}
 %% \firstname and \lastname will be used
@@ -77,37 +78,63 @@
 
 
 %-------------------------------------------------------------------------------
-\begin{document}
+%	LETTER INFORMATION
+%	All of the below lines must be filled out
+%-------------------------------------------------------------------------------
+% The company being applied to
+\recipient
+  {Graduate Recruitment Team}
+  {Uppsala universitet\\752 36 Uppsala, Sweden}
+% The date on the letter, default is the date of compilation
+\letterdate{\today}
+% The title of the letter
+\lettertitle{Details of referees for letters of recommendation}
+% How the letter is opened
+\letteropening{Dear Dr. Longhi,}
+% How the letter is closed
+\letterclosing{Sincerely,}
+% Any enclosures with the letter
+\letterenclosure[Attached]{Curriculum Vitae}
 
-\sloppy
+
+%-------------------------------------------------------------------------------
+\begin{document}
 
 % Print the header with above personal information
 % Give optional argument to change alignment(C: center, L: left, R: right)
-\makecvheader[C]
+\makecvheader[R]
 
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
 \makecvfooter
   {\today}
-  {Rishi Raj~~~·~~~Curriculum Vitae}
-  {\thepage}
+  {Rishi Raj~~~·~~~LORs}
+  {}
+
+% Print the title with above letter information
+\makelettertitle
+
+%-------------------------------------------------------------------------------
+%	LETTER CONTENT
+%-------------------------------------------------------------------------------
+\begin{cvletter}
+
+Here are the contact details of my referees
+
+{\bfseries Ayan Mukhopadhyay}, Assistant Professor, Department of Physics, IIT Madras \\
+\href{mailto:ayan@physics.iitm.ac.in}{\faEnvelope\acvHeaderIconSep ayan@physics.iitm.ac.in}
+
+{\bfseries Vishnu Jejjala}, Professor, School of Physics, University of Witwatersrand \\
+\href{mailto:vishnu.jejjala@gmail.com}{\faEnvelope\acvHeaderIconSep vishnu.jejjala@gmail.com}
+
+{\bfseries Boris Pioline}, Senior Faculty, LPTHE, Jussieu, Paris \\
+\href{mailto:boris.pioline@gmail.com}{\faEnvelope\acvHeaderIconSep boris.pioline@gmail.com}
+
+\end{cvletter}
 
 
 %-------------------------------------------------------------------------------
-%	CV/RESUME CONTENT
-%	Each section is imported separately, open each file in turn to modify content
-%-------------------------------------------------------------------------------
-\input{./sections/education.tex}
-\input{./sections/achievements.tex}
-\input{./sections/research.tex}
-\input{./sections/coursework.tex}
-\input{./sections/work.tex}
-\input{./sections/skills.tex}
-% \input{./sections/honors.tex}
-% \input{./sections/presentation.tex}
-% \input{./sections/writing.tex}
-% \input{./sections/committees.tex}
+% Print the signature and enclosures with above letter information
+\makeletterclosing
 
-
-%-------------------------------------------------------------------------------
 \end{document}
